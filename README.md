@@ -46,49 +46,23 @@ Publish the website in Localhost.
 math.html 
 
 <html>
-<head>
-    <title>Churn Rate Calculator</title>
-</head>
-
-<body bgcolor="Green 900">
-
-    <center>
-        <h1>JOHN RYAN A</h1>
+    <head>
+        <title>Churn rate</title>
+    </head>
+    <body bgcolor="Green 900">
+        <h1>A JOHN RYAN</h1>
         <h2>26008446</h2>
-
-        <h2>CHURN RATE CALCULATOR</h2>
-
         <form method="POST">
-            {% csrf_token %}
-
+            {%csrf_token %}<br><br>
             <label>INITIAL CUSTOMER:</label>
-            <input type="number" name="initial_cust"
-                   value="{{ l }}" min="0" step="any" required>
-
-            <br><br>
-
+            <input type="number" name="initial_cust" value="{{l}}" ><br><br>
             <label>PRESENT CUSTOMER:</label>
-            <input type="number" name="present_cust"
-                   value="{{ i }}" min="0" step="any" required>
-
-            <br><br>
-
-            <input type="submit" value="Calculate">
-
-            <br><br>
-
+            <input type="number" name="present_cust" value="{{i}}" ><br><br>
+            <input type="submit" value="Calculate"><br><br>
             <label>CHURN RATE:</label>
-            <input type="text"
-                   value="{% if churnrate != None %}{{ churnrate|floatformat:2 }}%{% endif %}"
-                   readonly>
-
-            <br><br>
-
-
+            <input type="number" value="{{churnrate}}"><br><br>
         </form>
-    </center>
-
-</body>
+    </body>
 </html>
 
 views.py
@@ -145,3 +119,4 @@ urlpatterns = [
 ![alt text](image1.jpeg)
 ## RESULT:
 The the web page to calculate Churn Rate using server-side scripts is created successfully.
+
