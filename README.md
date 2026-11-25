@@ -55,12 +55,12 @@ math.html
         <form method="POST">
             {%csrf_token %}<br><br>
             <label>INITIAL CUSTOMER:</label>
-            <input type="number" name="initial_cust" value="{{l}}" ><br><br>
+            <input type="number" name="initial_cust" value="{{Initial_Customer}}" ><br><br>
             <label>PRESENT CUSTOMER:</label>
-            <input type="number" name="present_cust" value="{{i}}" ><br><br>
+            <input type="number" name="present_cust" value="{{Customers_count}}" ><br><br>
             <input type="submit" value="Calculate"><br><br>
             <label>CHURN RATE:</label>
-            <input type="number" value="{{churnrate}}"><br><br>
+            <input type="number" value="{{churn_rate}}"><br><br>
         </form>
     </body>
 </html>
