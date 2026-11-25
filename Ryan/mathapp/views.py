@@ -1,33 +1,16 @@
 from django.shortcuts import render
 
 def churn_rate(request):
-    l = 0
-    i = 0
-    churnrate = None
-    error = ""
+    Customers_count = float(request.POST.get('present_cust', '0'))
+    Initial_Customer = float(request.POST.get('initial_cust', '0'))
+    churn_rate = ((Initial_Customer - Customers_count) / Initial_Customer) * 100 if request.method == 'POST' and Initial_Customer > 0 else 0
 
-    if request.method == "POST":
-        try:
-            l = float(request.POST.get('initial_cust') or 0)
-            i = float(request.POST.get('present_cust') or 0)
-
-            if l <= 0:
-                error = "Initial customers must be greater than zero."
-            elif i < 0:
-                error = "Present customers cannot be negative."
-            else:
-                churnrate = ((l - i) / l) * 100
-
-        except ValueError:
-            error = "Please enter valid numbers."
+    print("Customers lost count =", Customers_count)
+    print("Initial customers count =", Initial_Customer)
+    print("Churn_rate =", churn_rate)
 
     return render(
         request,
         'mathapp/math.html',
-        {
-            'l': l,
-            'i': i,
-            'churnrate': churnrate,
-            'error': error
-        }
+        {'Customers_count': Customers_count, 'Initial_Customer': Initial_Customer, 'churn_rate': churn_rate}
     )
