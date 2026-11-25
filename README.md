@@ -115,7 +115,7 @@ urlpatterns = [
 ## OUTPUT - SERVER SIDE:
 
 
-![Server-side output](Ryan/image%202.png)
+
 
 ## OUTPUT - WEBPAGE:
 
