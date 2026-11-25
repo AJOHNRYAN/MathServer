@@ -98,11 +98,11 @@ urlpatterns = [
 
 ## OUTPUT - SERVER SIDE:
 
-![alt text](<../image 2.png>)
+![alt text](image%202.png)
 ## OUTPUT - WEBPAGE:
 
 
-![alt text](../image1.png)
+![alt text](image1.png)
 ## RESULT:
 The the web page to calculate Churn Rate using server-side scripts is created successfully.
 
